@@ -2,8 +2,6 @@
 
 vagrant up - створює та запускає віртуальну машинку з Nginx
 
-vagrant halt - коректно вимикає запущену машинку
-
 vagrant reload --provision — перезапускає VM і повторно застосовує provisioning
 
 vagrant halt - зупиняє машинку
