@@ -1,21 +1,16 @@
 Vagrant.configure("2") do |config|
-  # Box CentOS Stream 9
   config.vm.box = "generic/centos9s"
 
-  # Forward port 80 -> 8888
   config.vm.network "forwarded_port", guest: 80, host: 8888, auto_correct: true
 
-  # Синхронізація папки з Windows
-  host_www = "C:/Users/alexs/Desktop/IHTLab1/HW1/www-content"
+  host_www = "C:/Users/alexs/Desktop/IHT/Lab1/www-content"
   config.vm.synced_folder host_www, "/vagrant", mount_options: ["dmode=755","fmode=644"]
 
-  # Налаштування ресурсів VM
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
     vb.cpus = 1
   end
 
-  # Provisioning для Nginx
   config.vm.provision "shell", inline: <<-SHELL
     yum install -y epel-release
     yum install -y nginx
@@ -25,8 +20,6 @@ Vagrant.configure("2") do |config|
     systemctl disable firewalld
     systemctl stop firewalld
 
-    # Видаляємо default.conf і створюємо новий конфіг
-    rm -f /etc/nginx/conf.d/default.conf
     cat > /etc/nginx/conf.d/vagrant.conf <<EOF
 server {
     listen 80 default_server;
@@ -37,7 +30,6 @@ server {
 }
 EOF
 
-    # Копіюємо сайт із /vagrant у /var/www/html
     cp -r /vagrant/* /var/www/html/
     systemctl restart nginx
   SHELL
