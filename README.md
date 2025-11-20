@@ -1,3 +1,5 @@
+4-CS31 Alexander Serediak
+
 vagrant up - створює та запускає віртуальну машинку з Nginx
 
 vagrant halt - коректно вимикає запущену машинку
