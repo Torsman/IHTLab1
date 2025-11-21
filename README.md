@@ -1,7 +1,7 @@
-4-CS31 Alexander Serediak
+# 4-CS31 Alexander Serediak
 
-vagrant up - створює та запускає віртуальну машинку з Nginx
+## Steps
 
-vagrant reload --provision — перезапускає VM і повторно застосовує provisioning
-
-vagrant halt - зупиняє машинку
+1. `vagrant up` – creates and starts the virtual machine with Nginx
+2. `vagrant reload --provision` – restarts the VM and reapplies provisioning
+3. `vagrant halt` – stops the virtual machine
