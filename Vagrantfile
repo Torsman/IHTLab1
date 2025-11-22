@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "forwarded_port", guest: 80, host: 8888, auto_correct: true
 
-  host_www = "C:/Users/alexs/Desktop/IHT/Lab1/www-content"
+  host_www = "./www-content"
   config.vm.synced_folder host_www, "/vagrant", mount_options: ["dmode=755","fmode=644"]
 
   config.vm.provider "virtualbox" do |vb|
