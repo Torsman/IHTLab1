@@ -1,1 +1,0 @@
-{"virtualbox":{"/vagrant":{"disabled":false,"guestpath":"/vagrant","hostpath":"C:/Users/alexs/Desktop/IHT/Lab1/www-content","mount_options":["dmode=755","fmode=644","uid=1000","gid=1000","_netdev"],"__vagrantfile":true}}}

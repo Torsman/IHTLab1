@@ -1,0 +1,9 @@
+.vagrant/
+
+*.log
+
+*.tmp
+*.swp
+*.bak
+
+*.pem
