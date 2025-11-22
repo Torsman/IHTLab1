@@ -30,6 +30,7 @@ server {
 }
 EOF
 
+    mkdir -p /var/www/html
     cp -r /vagrant/* /var/www/html/
     systemctl restart nginx
   SHELL
